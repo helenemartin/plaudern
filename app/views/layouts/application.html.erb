@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Plaudern</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <%= link_to "Home", root_path %>
-  <%= link_to "About", about_path %>
-  <%= link_to "Contact", contact_path %>
-  
-  <%= yield %>
+  <head>
+    <title>Plaudern</title>
+    <%= csrf_meta_tags %>
 
-</body>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-toggleable-md navbar-light bg-inverse">
+      <div class="container">
+        <%= link_to "Plaudern", root_path, class: "navbar-brand" %>
+        <ul class="navbar-nav">
+          <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Contact", contact_path, class: "nav-link" %></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <%= yield %>
+    
+    <!-- Footer -->
+    <footer class="small text-muted">
+      <div class="container">
+        <hr>
+        <center>
+          <p>© 2018 Helene Martin</p>
+        </center>
+      </div>
+    </footer>
+
+  </body>
 </html>
