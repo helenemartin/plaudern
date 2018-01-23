@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+  as :user do
+    get 'signin' => 'devise/session#new'
+    delete 'signout' => 'devise/session#destroy'
+    get 'signup' => 'devise/registration#new'
+  end
   # get 'pages/home'
 
   # The priority is based upon order of creation: first created -> highest priority.
