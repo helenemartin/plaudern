@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Plaudern</title>
+    <title>Bla blah</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,16 +13,16 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-toggleable-md navbar-light bg-inverse">
       <div class="container">
-        <%= link_to "Plaudern", root_path, class: "navbar-brand" %>
-        <ul class="navbar-nav">
+        <%= link_to "Bla Blah", root_path, class: "navbar-brand" %>
+        <ul class="nav bg-inverse">
           <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
           <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
           <li class="nav-item"><%= link_to "Contact", contact_path, class: "nav-link" %></li>
           <% if user_signed_in? %>
-          <li class="nav-item pull-md-right"><%= link_to "Log out", signout_path, method: :delete, class: "nav-link" %></li>
+          <li class="nav-item pull-md-right"><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
           <% else %>
-          <li class="nav-item"><%= link_to "Sign Up", signup_path, class: "nav-link btn btn-primary" %></li>
-          <li class="nav-item"><%= link_to "Sign In", signin_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class: "nav-link btn btn-primary pull-right" %></li>
+          <li class="nav-item"><%= link_to "Sign In", new_user_session_path, class: "nav-link" %></li>
           <% end %>
         </ul>
       </div>

@@ -14,6 +14,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap', '~> 4.0.0.beta3'
 gem 'devise'
+gem 'activeadmin', '~> 1.0.0.pre4'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
